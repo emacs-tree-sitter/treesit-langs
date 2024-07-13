@@ -202,7 +202,6 @@
 ;; Install only once.
 (treesit-langs-install-grammars)
 
-;;;###autoload
 (defun treesit-langs-major-mode-setup ()
   "Activate tree-sitter to power major-mode features."
   (when-let* ((lang (alist-get major-mode treesit-langs-major-mode-alist))
