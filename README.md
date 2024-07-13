@@ -6,6 +6,13 @@
 
 [![CI](https://github.com/emacs-tree-sitter/treesit-langs/actions/workflows/test.yml/badge.svg)](https://github.com/emacs-tree-sitter/treesit-langs/actions/workflows/test.yml)
 
+## 🖥 Usage
+
+```elisp
+(require 'treesit-langs)
+(treesit-langs-major-mode-setup)
+```
+
 ## 🛠️ Contribute
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
@@ -17,7 +24,6 @@ If you would like to contribute to this project, you may either
 clone and make pull requests to this repository. Or you can
 clone the project and establish your own branch of this tool.
 Any methods are welcome!
-
 
 ### 🔬 Development
 
