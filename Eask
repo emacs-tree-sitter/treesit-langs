@@ -13,4 +13,3 @@
 (source 'melpa)
 
 (depends-on "emacs" "29.1")
-(depends-on "tree-sitter-langs")
