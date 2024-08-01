@@ -315,6 +315,7 @@ non-nil."
             (dired-omit-mode -1))))
       (treesit-langs--rename))))
 
+;; Install only once.
 (treesit-langs-install-grammars :skip-if-installed)
 
 ;;
