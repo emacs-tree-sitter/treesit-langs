@@ -38,6 +38,14 @@
   "Grammar bundle for `treesit.el'."
   :group 'tree-sitter)
 
+(defcustom treesit-langs-bundle-version "0.12.241"
+  "Version of the grammar bundle.
+
+Ideally, we want this value to be same as `tree-sitter-langs--bundle-version'
+from `tree-sitter-langs' package."
+  :type 'string
+  :group 'treesit-langs)
+
 (defcustom treesit-langs-major-mode-alist
   '((actionscript-mode      . actionscript)
     (ada-mode               . ada)
@@ -169,14 +177,6 @@
 (defcustom treesit-langs-major-mode-setup-hook nil
   "Hook run after major mode is setup."
   :type 'hook
-  :group 'treesit-langs)
-
-(defcustom treesit-langs-bundle-version "0.12.208"
-  "Version of the grammar bundle.
-
-Ideally, we want this value to be same as `tree-sitter-langs--bundle-version'
-from `tree-sitter-langs' package."
-  :type 'string
   :group 'treesit-langs)
 
 (defconst treesit-langs--bundle-version-file "BUNDLE-VERSION")
