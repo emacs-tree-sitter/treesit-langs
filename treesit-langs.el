@@ -315,9 +315,6 @@ non-nil."
             (dired-omit-mode -1))))
       (treesit-langs--rename))))
 
-;; Install only once.
-(treesit-langs-install-grammars :skip-if-installed)
-
 ;;
 ;;; Rename
 
@@ -353,6 +350,9 @@ non-nil."
               ((ignore-errors (treesit-parser-create lang))))
     (treesit-major-mode-setup)
     (run-hooks 'treesit-langs-major-mode-setup-hook)))
+
+;; Install only once.
+(treesit-langs-install-grammars :skip-if-installed)
 
 (provide 'treesit-langs)
 ;;; treesit-langs.el ends here
