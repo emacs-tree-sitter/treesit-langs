@@ -1,6 +1,6 @@
 ;;; treesit-langs.el --- Language bundle for Emacs's treesit.el  -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2024-2025  Shen, Jen-Chieh
+;; Copyright (C) 2024-2025  emacs-tree-sitter maintainers
 
 ;; Author: Shen, Jen-Chieh <jcs090218@gmail.com>
 ;; Maintainer: Shen, Jen-Chieh <jcs090218@gmail.com>
