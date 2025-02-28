@@ -243,7 +243,9 @@ If VERSION and OS are not spcified, use the defaults of
           ;; FIX: Implement this correctly, refactoring 'OS' -> 'platform'.
           (pcase os
             ("windows" "x86_64-pc-windows-msvc")
-            ("linux"   "x86_64-unknown-linux-gnu")
+            ("linux"   (if (string-prefix-p "aarch64" system-configuration)
+                           "aarch64-unknown-linux-gnu"
+                         "x86_64-unknown-linux-gnu"))
             ("freebsd" "x86_64-unknown-freebsd")
             ("macos"   (if (string-prefix-p "aarch64" system-configuration)
                            "aarch64-apple-darwin"
