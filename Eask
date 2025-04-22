@@ -1,3 +1,5 @@
+;; -*- mode: eask; lexical-binding: t -*-
+
 (package "treesit-langs"
          "0.1.0"
          "Language bundle for Emacs's treesit.el")
