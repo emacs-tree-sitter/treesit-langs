@@ -4,7 +4,7 @@
 
 (load-file "./scripts/_prepare.el")
 
-(princ (get-latest-tag))
+(princ (string-replace "melpa-stable/v" "" (get-latest-tag)))
 
 ;; Local Variables:
 ;; coding: utf-8

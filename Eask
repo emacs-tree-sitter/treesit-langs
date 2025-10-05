@@ -10,6 +10,7 @@
 (package-file "treesit-langs.el")
 
 (script "test" "echo \"Error: no test specified\" && exit 1")
+(script "latest-tag" "eask load scripts/latest-tag.el")
 (script "update-bundle-version" "eask load scripts/update-bundle-version.el")
 
 (source 'gnu)
