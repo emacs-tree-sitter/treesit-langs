@@ -38,5 +38,5 @@ jobs:
         title: 'Update Bundle Version to ${{ env.VERSION }}'
         body: ''
         commit-message: 'Update Bundle Version to ${{ env.VERSION }}'
-        branch: submodules-update
+        branch: update-bundle-version
         delete-branch: true
