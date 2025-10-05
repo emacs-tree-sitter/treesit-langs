@@ -10,8 +10,14 @@
 (package-file "treesit-langs.el")
 
 (script "test" "echo \"Error: no test specified\" && exit 1")
+(script "update-bundle-version" "eask load scripts/update-bundle-version.el")
 
 (source 'gnu)
 (source 'melpa)
+(source 'jcs-elpa)
 
 (depends-on "emacs" "29.1")
+
+(development
+ (depends-on "elenv")
+ (depends-on "github-tags"))

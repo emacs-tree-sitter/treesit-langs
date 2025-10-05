@@ -1,0 +1,41 @@
+name: Get Version
+
+on:
+  workflow_call:
+    outputs:
+      version:
+        description: The latest `tree-sitter-langs` Version
+        value: ${{ jobs.get-version.outputs.VERSION }}
+    inputs:
+      workflow_ref:
+        description: 'Must be the same as "uses: ...@THIS"'
+        default: master
+        required: false
+        type: string
+
+env:
+  EMACS_VER: 30.2
+
+jobs:
+  get-version:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.expose-ver.outputs.VERSION }}
+    steps:
+    - uses: jcs090218/setup-emacs@master
+      with:
+        version: ${{ env.EMACS_VER }}
+
+    - uses: emacs-eask/setup-eask@master
+      with:
+        version: 'snapshot'
+
+    - uses: actions/checkout@v5
+
+    - name: Expose Version
+      id: expose-ver
+      run: |
+        eask install-deps --dev
+        VERSION=$(eask load scripts/latest-tag.el)
+        echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
+        echo "$VERSION"

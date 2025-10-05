@@ -1,0 +1,42 @@
+name: Update Bundle Version
+
+on:
+  schedule:
+    - cron:  '0 * * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  get-version:
+      uses: emacs-tree-sitter/treesit-langs/.github/workflows/get_version.yml@master
+
+  main:
+    needs: [get-version]
+    runs-on: ubuntu-latest
+    env:
+      VERSION: ${{ needs.get-version.outputs.version }}
+    steps:
+    - uses: actions/checkout@v5
+      with:
+        persist-credentials: false
+        fetch-depth: 0
+
+    - name: Expose bundle version
+      run: |
+        echo "BUNDLE_VER=${{ env.VERSION }}" >> $GITHUB_ENV
+
+    - name: Update Bundle Version
+      run: |
+        eask run script update-bundle-version
+
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v6
+      with:
+        title: 'Update Bundle Version to ${{ env.VERSION }}'
+        body: ''
+        commit-message: 'Update Bundle Version to ${{ env.VERSION }}'
+        branch: submodules-update
+        delete-branch: true
