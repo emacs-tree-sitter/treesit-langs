@@ -19,10 +19,15 @@ jobs:
     env:
       VERSION: ${{ needs.get-version.outputs.version }}
     steps:
-    - uses: actions/checkout@v5
+    - uses: jcs090218/setup-emacs@master
       with:
-        persist-credentials: false
-        fetch-depth: 0
+        version: ${{ env.EMACS_VER }}
+
+    - uses: emacs-eask/setup-eask@master
+      with:
+        version: 'snapshot'
+
+    - uses: actions/checkout@v5
 
     - name: Expose bundle version
       run: |
