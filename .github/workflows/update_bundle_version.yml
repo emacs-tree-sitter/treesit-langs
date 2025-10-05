@@ -38,6 +38,7 @@ jobs:
 
     - name: Update Bundle Version
       run: |
+        eask install-deps --dev
         eask run script update-bundle-version
 
     - name: Create Pull Request
