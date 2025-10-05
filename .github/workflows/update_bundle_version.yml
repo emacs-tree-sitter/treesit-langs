@@ -11,7 +11,7 @@ concurrency:
 
 jobs:
   get-version:
-      uses: emacs-tree-sitter/treesit-langs/.github/workflows/get_version.yml@master
+      uses: emacs-tree-sitter/treesit-langs/.github/workflows/get_version.yml@main
 
   main:
     needs: [get-version]
