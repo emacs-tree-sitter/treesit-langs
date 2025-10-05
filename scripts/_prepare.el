@@ -13,7 +13,7 @@
   (if-let* ((repo "emacs-tree-sitter/tree-sitter-langs")
             (response (cdr (github-tags repo)))
             (tags (plist-get response :names))
-            (latest (nth 1 tags)))  ; Skip the first one since it's the pre-release!
+            (latest (nth 0 tags)))
       latest
     (user-error "[ERROR] Latest tag not found in repository: %s" repo)))
 
