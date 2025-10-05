@@ -9,6 +9,9 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  EMACS_VER: 30.2
+
 jobs:
   get-version:
       uses: emacs-tree-sitter/treesit-langs/.github/workflows/get_version.yml@main
