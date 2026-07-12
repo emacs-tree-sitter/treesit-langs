@@ -38,7 +38,7 @@
   "Grammar bundle for `treesit.el'."
   :group 'tree-sitter)
 
-(defcustom treesit-langs-bundle-version "0.13.70"
+(defcustom treesit-langs-bundle-version "0.13.71"
   "Version of the grammar bundle.
 
 Ideally, we want this value to be same as `tree-sitter-langs--bundle-version'
